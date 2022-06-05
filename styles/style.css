@@ -64,11 +64,17 @@ ul{
     gap: 16px;
 }
 
-/*Here all li elements inside of the .header class div are getting the 
-requested font-size 18px and color: #E5E7EB;*/
-.header li{
+/*Here all link elements inside of li elements inside the .header class div are getting the 
+requested font-size 18px and color: #E5E7EB;
+I added # as a dummy destination since the links have no destination yet
+I didn't target the a element in general because maybe the logo will also become a link in the future.
+This css selector is more specific so I think it would overrule the 24px font-size on the logo.
+I only target the a elements that are inside of the li elements inside of the div with class header.
+*/
+.header li a{
     font-size: 18px;
     color: #E5E7EB;
+    text-decoration: none;
 }
 
 /*Here the .logo gets the requested font-size of 24px and color #F9FAF8*/
