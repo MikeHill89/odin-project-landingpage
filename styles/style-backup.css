@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/*Here the padding and margin is set to 0 on the body to 
+make sure the body covers the entire browser viewport. 
+Also the font for any text elements on the page is set to Roboto*/
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Roboto;
+}
+
+/*this is the main flex container class.
+It will hold all other flex items that can also be flex containers in and in themselves.
+It's direction is column so all child items have a vertical main axis.
+*/
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+/*This header-section class is a flex item of .container and a flex container in itself.
+It hosts .narrowcontainer as a flex item which is also a flex container with default flex direction row.
+It's flex direction is column meaning all flex items have a vertical main axis.
+Justify-content is center so it center's flex items on vertical main axis in the middle.
+The height of the header-section is 100px.
+It gives enough breathing space.
+*/
+.header-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+}
+/*Here the background color is set to for the header-section and hero-section */
+.header-section,
+.hero-section{
+    background-color:#1F2937;
+}
+
+/*This narrowcontainer class is used to create a smaller narrow flex container of 980px 
+inside of a page section.
+Meaning it is alway used as flex item on flex containers named .xxxxx-section.
+But it is also a flex container by itself.
+Flex direction is the default row meaning all flex items have a horizontal main axis.
+It justifies all flex items to be spaced-between the horizontal main axis of 980px.
+It align all items to be centered on the vertical cross axis of the parent flex container.
+It also using the margin trick to center itself in the middle of the flex parent container it is part of.
+Spacing between pushes the first and last flex-items to the left(flex-start) and right edge(flex-end)
+of the 980px container.
+Gap specifies 48px in between flex items.
+*/
+.narrowcontainer{
+    display: flex;
+    margin: auto;
+    width: 980px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+/*This targets the ul element inside of the .header-section to be a flex container. 
+By default ul elements are arranged in a column.
+By adding display flex this becomes the default row direction and sets the ul flex item elements in a row. 
+List-style type is set to none to remove the points on the list.
+The ul element has padding and margins by default. Setting these to 0 fixes this.
+Gap sets the space "between" each ul to be 16px. 
+The first ul item doesn't have 16px on it's left edge, neither does the last ul item have 16px on it's right side
+Only in between the flex items there is a 16px gap
+*/
+.header-section ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 16px;
+}
+
+/*Here all link elements inside of li elements inside the .header-section class div are getting the 
+requested font-size 18px and color: #E5E7EB;
+I added # as a dummy destination since the links have no destination yet
+I didn't target the a element in general because maybe the logo will also become a link in the future.
+This css selector is more specific so I think it would overrule the 24px font-size on the logo.
+I only target the a elements that are inside of the li elements inside of the div with class header-section.
+I set text-decoration to none to remove the underline from the text.
+*/
+.header-section li a{
+    font-size: 18px;
+    color: #E5E7EB;
+    text-decoration: none;
+}
+
+/*Here the .logo gets the requested font-size of 24px */
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+/*Here the .logo and the hero title get the requested color #F9FAF8*/
+.logo,
+.hero-title{
+    color: #F9FAF8;
+}
+
+/*Here the hero title gets the requested 48px font-size and bolder font-weight */
+.hero-title{
+    font-size: 48px;
+    font-weight: bolder;
+}
+/*Here the hero-section is a flex item .container flex container.
+hero-section is also a flex container itself with flex-direction column.
+It's content is justified center and the container has a height 400px.
+It hosts .narrowcontainer as a flex item which is also a flex container with default flex direction row.
+This .narrowcontainer is flex parent to flex items.hero-left and .hero-right and spaces them between*/
+.hero-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+}
+
+/*Here the hero image is styled. Height is set to auto so it doesn't distort it's proportions
+borde-radius adds rounded corners of 25px and border is set to none*/
+.hero-image{
+    width: 450px;
+    height: auto;
+    border: none;
+    border-radius: 25px;
+}
+
+/*this class is a child flex item of narrowcontainer flex container.
+Flex 0.5 say it will take up half of the narrow container's space for itself.
+Automatically .hero-left will therefor also have 0.5 space left*/
+.hero-right{
+    flex: 0.5;
+}
+
+.hero-left{
+
+}
+

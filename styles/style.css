@@ -7,79 +7,124 @@ body{
     padding: 0;
     margin: 0;
     font-family: Roboto;
-}
-
-/*this is the main flex container class.
-It will hold all other flex items that can also be flex containers in and in themselves.
-It's direction is column so all child items have a vertical main axis.
-*/
-.container{
     display: flex;
+    justify-content: center;
     flex-direction: column;
 }
+.header-section{
+    flex: 1;
+    background-color: #1F2937;
+}
 
-/*This header class is a flex item of .container and a flex container in itself.
-It hosts .narrowcontainer as a flex item which is also a flex container.
-It's flex direction is the default row meaning all flex items have a horizontal main axis.
-The background color is set to #1F2937 as requested. The height of the header is 100px.
-It gives enough breathing space.
-*/
-.header{
+header{
     display: flex;
+    margin: auto;
     height: 100px;
-    background-color:#1F2937;
-}
-
-/*This narrowcontainer class is a flex item of .header class flex continaer
-and a flex container in itself for flex items .logo and .top-menu.
-Flex direction is the default row meaning all flex items have a horizontal main axis.
-It justifies the 2 child flex items .logo and .topmenu to be spaced between the 980px narrowcontainer.
-It also using the margin trick to center itself it's flex items in the middle of the flex container but "spaced between".
-Spacing between pushes both flex-items to the left and right edge of the container.
-Ultimately align-items center the children flex items on the vertical cross axis.
-This can als be done by using just margin: auto; and removing align-items: center;
-*/
-.narrowcontainer{
-    display: flex;
-    margin: 0 auto;
-    align-items: center;
-    width: 980px;
+    width: 70vw ;
+    padding: 0 16px;
     justify-content: space-between;
+    align-items: center;
 }
 
-/*This targets the ul element to be a flex container. 
-By default ul elements are arranged in a column.
-By adding display flex this becomes the default row direction and sets the ul flex item elements in a row. 
-List-style type is set to none to remove the points on the list.
-The ul element has padding and margins by default. Setting these to 0 fixes this.
-Gap sets the space "between" each ul to be 16px. 
-The first ul item doesn't have 16px on it's left edge, neither does the last ul item have 16px on it's right side
-Only in between the flex items there is a 16px gap
-*/
-ul{
+header ul, header ul a{
+    flex: 1;
     display: flex;
-    list-style-type: none;
     padding: 0;
     margin: 0;
     gap: 16px;
-}
-
-/*Here all link elements inside of li elements inside the .header class div are getting the 
-requested font-size 18px and color: #E5E7EB;
-I added # as a dummy destination since the links have no destination yet
-I didn't target the a element in general because maybe the logo will also become a link in the future.
-This css selector is more specific so I think it would overrule the 24px font-size on the logo.
-I only target the a elements that are inside of the li elements inside of the div with class header.
-*/
-.header li a{
-    font-size: 18px;
-    color: #E5E7EB;
+    list-style-type: none;
     text-decoration: none;
 }
 
-/*Here the .logo gets the requested font-size of 24px and color #F9FAF8*/
-.logo{
+.logo {
+    flex: 1;
     font-size: 24px;
-    font-weight: bold;
     color: #F9FAF8;
+    font-weight: bold;
+}
+
+.hero-section{
+    flex:1;
+    background-color: #1F2937;
+    justify-content: center;
+}
+
+.herowrapper{
+    display: flex;
+    flex-direction: row wrap;
+    margin: auto;
+    height: 450px;
+    width: 70vw;
+    padding: 0 16px;
+    align-items: center;
+    gap: 5rem;
+}
+
+.hero-img{
+    width: 500px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.hero-title{
+    font-size: 48px;
+    font-weight: bolder;
+    color: #F9FAF8;
+}
+
+.hero-subtext,
+.topmenu li a{
+    font-size: 18px;
+    color: #E5E7EB;;
+}
+
+.random-section{
+    flex: 1;
+}
+
+.randomwrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 400px;
+    width: 70vw;
+    gap: 2rem;
+    padding: 5rem;
+}
+
+.infoheader{
+    font-size: 36px;
+    font-weight: bolder;
+    color: #1F2937;
+
+}
+.infoblocks{
+    display: flex;
+    gap: 5rem;
+}
+
+.infoblock, .infoblock p{
+    flex: 1;
+    width: 150px;
+    height: auto;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.infoimage{
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
+    border: 2px solid midnightblue;
+}
+
+.signup-button{
+    border-radius: 10px;
+    border: none;
+    padding: 10px 50px;
+    background-color: #3882F6;
+    color: white;
+    font-size: 18px;
 }
