@@ -117,7 +117,7 @@ header ul, header ul a{
     width: 150px;
     height: 150px;
     border-radius: 25px;
-    border: 2px solid midnightblue;
+    border: 2px solid #3882F6;
 }
 
 .signup-button{
@@ -127,4 +127,34 @@ header ul, header ul a{
     background-color: #3882F6;
     color: white;
     font-size: 18px;
+}
+
+.quote-section{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    background-color: #E5E7EB;
+}
+
+.quotewrapper{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.quotemessage p{ 
+    width: 55vw;
+    color: #1F2937;
+    font-size: 36px;
+    font-style: italic;
+}
+
+.quotemessage .saidby p{
+    font-size: 1.3rem;
+    font-style:normal;
+    font-weight: bold;
+    text-align: right;
 }
