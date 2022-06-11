@@ -8,9 +8,18 @@ body{
     justify-content: center;
     flex-direction: column;
 }
-.header-section{
-    flex: 1;
+.header-section,.footerwrapper{
     background-color: #1F2937;
+}
+
+.footer-section{
+    display: flex;
+    height: 100px;
+    width: 70vw;
+    margin: auto;
+    padding: 0 16px;
+    justify-content: center;
+    align-items: center
 }
 
 header{
@@ -70,7 +79,7 @@ header ul, header ul a{
 }
 
 .hero-subtext,
-.topmenu li a{
+.topmenu li a,.footer-section{
     font-size: 18px;
     color: #E5E7EB;;
 }
